@@ -1,22 +1,18 @@
 #!/usr/bin/node
+/**
+ * Update this script by adding a new function incr that increments the integer value.
+
+You are not allowed to use var
+ */
+
 
 const myObject = {
     type: 'object',
     value: 12
   };
   console.log(myObject);
-  function incr(number) {
-    return number + 1;
-  }
-  // Define the addMeMaybe function
-  function addMeMaybe(number, theFunction) {
-    const incrementedNumber = incr(number); // Increment the number
-    theFunction(incrementedNumber); // Call the function with the incremented number
-  }
-  // Export both functions so they can be used outside of this module (CommonJS style)
-  module.exports = {
-    addMeMaybe: addMeMaybe,
-    incr: incr
+  myObject.incr = function () {
+    this.value++;
   };
   myObject.incr();
   console.log(myObject);
